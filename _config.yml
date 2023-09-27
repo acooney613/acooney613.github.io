@@ -18,9 +18,9 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: STAT 386 BLOG 
+title: DATA SPEAKS 
 email: acooney613@gmail.com 
-description: "This is a blog created for my stat-386 class" 
+description: "This is a blog dedicated to talking about different aspects of data science" 
 baseurl: 
 url: "https://acooney613.github.io"
 image: "/assets/images/otter1.png"
@@ -32,9 +32,9 @@ footer_description:
 # Social media users names.  Leave fields blank that you don't want displayed
 twitter_username:
 github_username:  acooney613
-linkedin_username: 
+linkedin_username: acooney1
 dribbble_username: 
-facebook_username: 
+facebook_username: acooney613
 flickr_username:
 instagram_username: acooney613
 pinterest_username:
