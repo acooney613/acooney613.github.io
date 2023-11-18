@@ -39,7 +39,7 @@ In the dropdown below is my full code and class implementation for this particul
 
 <details>
 <summary> 
-<span style = 'color: red;'>
+<span style = 'color: red;' style = 'background-color: black'>
 Full Code and Class Implementation 
 </span>
 </summary>
