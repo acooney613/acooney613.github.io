@@ -25,52 +25,17 @@ The first step to create this data set was to scrape and clean data for each tea
 
 ### Scraping the Data
 
-Using the url I used pandas to grab this data, as it was just a simple table on the website. Since using pandas returns a list of the tables on the webpage, I selected the first one.
-
-```python
----
-import pandas as pd
-
-# read the data using pandas
-df = pd.read_html(url)
-
-# grab the first dataset
-df = df[0]
----
-```
-
-Now that we got the payroll data, we need to clearn it.
+To scrape this data, I simply used pandas read_html() function. This function takes the url you want to scrape as an argument, and returns a list of the dataframes it finds. Selecting the table you want from this output, we can begin the cleaning process to make the dataset what we want it to be. 
 
 ### Cleaning the Data
 
-To clean this specific dataset is simple. The first row of this dataset should be the header instead. We also want to select the columns with the teams and the payroll information. Finally, we need to add a column for the year so that combining the data in the final steps is far easier.
+Luckily, this dataset is fairly simple to clean. We just need to select the columns that give the team name and payroll data. We also need to add column for the year we are looking at so that combining the data is much easier later. 
 
 *** Important Note ***
 
 When cleaning this data, in order to combine the data with the other data sets we will scrape shortly the names of some of the teams must be changed (i.e. Cleveland Guardians)
 
-```python
----
-# this code chunk selects the current year, but year can be set to whatever year you want to look at
-import datetime
-day = datetime.date.today()
-year = day.year
-
-# this grabs the first and the fifth column from the dataset
-df = df.iloc[:, [1, 5]]
-
-# this renames the columns to be the information contained in the first row
-df.columns = df.loc[0]
-
-# this selects rows 1 to 30
-df = df.loc[1:30]
-
-# this creates the column year, and sets the value to be a string of year
-df['year'] = f'{year}'
----
-```
-
-The code above is a quick example of how you may scrape the data for just one year. In the dropdown below I have placed my full code I used to scrape across multiple years. 
+In the dropdown below is my full code and class implementation for this particular dataset.
 
 <details>
 <summary> Full Code and Class Implementation </summary>
