@@ -84,7 +84,73 @@ df['year'] = f'{year}'
 
 ```python
 ---
-print('hello world')
+# class I used to get the payroll data
+class payroll():
+    def __init__(self, base_url):
+        # get the base url, we will add the year later
+        self.base_url = base_url
+
+        # create an empty instance of the dataframe
+        self.pay = pd.DataFrame(columns = ['Team Name', 'Team Payroll', 'year'])
+    
+    def get_data(self):
+        # get the current year and subtract one to get previous years data (as that will most likely be updated)
+        day = datetime.date.today()
+        year = day.year - 1
+
+        # call the function to scrape the data
+        self.payroll(year)
+
+        # rename the columns of our dataset
+        self.pay.columns = ['team', 'payroll', 'year']
+
+        # here are the teams that we have to rename in order to combine later
+        self.pay['team'] = self.pay['team'].str.replace(' Devil', '')
+        self.pay['team'] = self.pay['team'].str.replace('Los Angeles Angels of Anaheim', 'Los Angeles Angels')
+        self.pay['team'] = self.pay['team'].str.replace('Anaheim Angels', 'Los Angeles Angels')
+        self.pay['team'] = self.pay['team'].str.replace('Los Angeles Angels of Anaheim', 'Los Angeles Angels')
+        self.pay['team'] = self.pay['team'].str.replace('Florida', 'Miami')
+        self.pay['team'] = self.pay['team'].str.replace('Montreal Expos', 'Washington Nationals')
+        self.pay['team'] = self.pay['team'].str.replace('Oakland Athletics', 'Oakland A’s')
+        self.pay['team'] = self.pay['team'].str.replace('Indians', 'Guardians')
+
+        # return the cleaned data
+        return self.pay
+
+    def payroll(self, year):
+        # create our new url using the current year we are looking at
+        url = self.base_url + f'{year}'
+
+        # get the data
+        df = pd.read_html(url)
+
+        # select the first table
+        pay = df[0]
+
+        # grab columns 1 and 5
+        pay = pay.iloc[:, [1, 5]]
+
+        # renames the columns to be the first row
+        pay.columns = pay.loc[0]
+
+        # selects rows 1 through 30
+        pay = pay.loc[1:30]
+
+        # creates a year column and populates with a string of year
+        pay['year'] = f'{year}'
+
+        # add this years data to the data we have already collected 
+        self.pay = pd.concat([self.pay, pay], ignore_index = True)
+
+        # if the year we are currently looking at is 2003, we stop
+        if year > 2003:
+            self.payroll(year - 1)
+
+# create a payroll variable
+x = payroll('https://www.thebaseballcube.com/page.asp?PT=payroll_year&ID=')
+
+# get the payroll data
+df_payroll = x.get_data()
 ---
 ```
 </div>
