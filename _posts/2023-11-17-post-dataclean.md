@@ -4,6 +4,9 @@ title: MLB Team Payroll and its Affects on Fan Attendance (Data Cleaning)
 author: Aidan Cooney
 description: How to scrape and clean data for MLB Team Payroll and Attendance 
 image: "/assets/images/baseball.png"
+markdown: kramdown
+kramdown:
+  parse_block_html: true
 ---
 
 ## Background
@@ -70,7 +73,6 @@ df['year'] = f'{year}'
 ```
 
 <details>
-
 <summary> Full Code and Class Implementation </summary>
 
 ### Here is the full code 
