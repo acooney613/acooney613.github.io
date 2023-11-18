@@ -43,13 +43,7 @@ Now that we got the payroll data, we need to clearn it.
 
 ### Cleaning the Data
 
-To clean this specific dataset is simple. 
-
-The first row of this dataset should be the header instead. 
-
-We also want to select the columns with the teams and the payroll information. 
-
-Finally, we need to add a column for the year so that combining the data in the final steps is far easier.
+To clean this specific dataset is simple. The first row of this dataset should be the header instead. We also want to select the columns with the teams and the payroll information. Finally, we need to add a column for the year so that combining the data in the final steps is far easier.
 
 *** Important Note ***
 
