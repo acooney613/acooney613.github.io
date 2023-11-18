@@ -52,6 +52,7 @@ We also want to select the columns with the teams and the payroll information.
 Finally, we need to add a column for the year so that combining the data in the final steps is far easier.
 
 *** Important Note ***
+
 When cleaning this data, in order to combine the data with the other data sets we will scrape shortly the names of some of the teams must be changed (i.e. Cleveland Guardians)
 
 ```python
@@ -79,8 +80,6 @@ df['year'] = f'{year}'
 <summary> Full Code and Class Implementation </summary>
 
 <div markdown="1">
-
-### Here is the full code 
 
 ```python
 ---
