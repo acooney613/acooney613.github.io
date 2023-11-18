@@ -70,7 +70,7 @@ df['year'] = f'{year}'
 ---
 ```
 
-The code above is a quick example of how you may scrape the data for just on year. In the dropdown below I have placed my full code I used to scrape across multiple years. 
+The code above is a quick example of how you may scrape the data for just one year. In the dropdown below I have placed my full code I used to scrape across multiple years. 
 
 <details>
 <summary> Full Code and Class Implementation </summary>
