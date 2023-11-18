@@ -69,7 +69,6 @@ df = df.loc[1:30]
 
 # this creates the column year, and sets the value to be a string of year
 df['year'] = f'{year}'
-
 ---
 ```
 
