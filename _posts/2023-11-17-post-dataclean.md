@@ -38,10 +38,8 @@ When cleaning this data, in order to combine the data with the other data sets w
 In the dropdown below is my full code and class implementation for this particular dataset.
 
 <details>
-<summary> 
-<span style = 'color: white; background-color: blue;'>
+<summary style = 'color: blue;'> 
 Full Code and Class Implementation 
-</span>
 </summary>
 
 <div markdown="1">
