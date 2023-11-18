@@ -38,7 +38,11 @@ When cleaning this data, in order to combine the data with the other data sets w
 In the dropdown below is my full code and class implementation for this particular dataset.
 
 <details>
-<summary> Full Code and Class Implementation </summary>
+<summary> 
+<span style = 'color: red;'>
+Full Code and Class Implementation 
+</span>
+</summary>
 
 <div markdown="1">
 
