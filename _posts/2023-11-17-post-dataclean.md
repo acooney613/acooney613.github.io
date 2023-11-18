@@ -70,12 +70,13 @@ df = df.loc[1:30]
 # this creates the column year, and sets the value to be a string of year
 df['year'] = f'{year}'
 
-t
 ---
 ```
 
 <details>
 <summary> Full Code and Class Implementation </summary>
+
+<div markdown="1">
 
 ### Here is the full code 
 
