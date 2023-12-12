@@ -456,4 +456,4 @@ df_stadium.to_csv('DATA/stadiums.csv', index = False)
 
 The next step in the data collection process is to scrape the complete MLB season data and outcomes from 2003 through 2023. To do this I used baseball-reference and pd.read_html. Since baseball-reference is a smaller website, BeautifulSoup had several issues scraping this data. Also, be mindful of how many requests you send to the website itself when collecting the data as it is not equipped to handle too many requests from one location. 
 
-<base href='{{https://github.com/acooney613/stat386-mlb_attendance/blob/main/attendance.py}}'>
+https://github.com/acooney613/stat386-mlb_attendance/blob/main/attendance.py
