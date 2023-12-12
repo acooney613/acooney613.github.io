@@ -1,8 +1,8 @@
 ---
 layout: post
-title: MLB Team Payroll and its Affects on Fan Attendance (Data Cleaning)
+title: Contributing Factors for MLB Fan Attendance (Data Collection and Cleaning)
 author: Aidan Cooney
-description: How to scrape and clean data for MLB Team Payroll and Attendance 
+description: How to scrape and clean several datasets to explore contributing factors to MLB fan attendance 
 image: "/assets/images/baseball.png"
 markdown: kramdown
 kramdown:
