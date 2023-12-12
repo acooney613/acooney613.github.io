@@ -211,3 +211,221 @@ df_payroll = x.get_data()
 ```
 </div>
 </details>
+
+## Stadium Data
+
+Next, I gathered data for each of the MLB stadiums and their total capacity. To do this I used python's BeautifulSoup to scrape data off of ballparksofbaseball.com. I gathered data from past and present ballparks in order to accurately combine this information with the others gathered. 
+
+For this data, the website I scraped did not contain a dataset, and instead just had a collection of ballparks with various information. This meant that the scraping process was a little trickier to grab all of the information that I needed. Cleaning the data was also not so simple. I used several regular expressions to extract the important pieces of information to create my final and complete stadium dataset. 
+
+Additionally, each of the ballparks on the main page of the website contain links to a new webpage with information specific to that ballpark. This means that for each of the ballparks, a new BeautifulSoup object has to be created and the new webpage scraped, as shown in the code below. 
+
+In the dropdown below is my full code and class implementation for the stadium data:
+
+<details>
+<summary style = 'color: blue;'> 
+Full Code and Class Implementation 
+</summary>
+
+<div markdown="1">
+
+```python
+---
+# python packages required for scraping this data
+import pandas as pd
+import requests
+from bs4 import BeautifulSoup
+import re
+
+# dictionary with states and their abbreviations
+STATES = {
+        'AK': 'Alaska',
+        'AL': 'Alabama',
+        'AR': 'Arkansas',
+        'AS': 'American Samoa',
+        'AZ': 'Arizona',
+        'CA': 'California',
+        'CO': 'Colorado',
+        'CT': 'Connecticut',
+        'DC': 'District of Columbia',
+        'DE': 'Delaware',
+        'FL': 'Florida',
+        'GA': 'Georgia',
+        'GU': 'Guam',
+        'HI': 'Hawaii',
+        'IA': 'Iowa',
+        'ID': 'Idaho',
+        'IL': 'Illinois',
+        'IN': 'Indiana',
+        'KS': 'Kansas',
+        'KY': 'Kentucky',
+        'LA': 'Louisiana',
+        'MA': 'Massachusetts',
+        'MD': 'Maryland',
+        'ME': 'Maine',
+        'MI': 'Michigan',
+        'MN': 'Minnesota',
+        'MO': 'Missouri',
+        'MP': 'Northern Mariana Islands',
+        'MS': 'Mississippi',
+        'MT': 'Montana',
+        'NA': 'National',
+        'NC': 'North Carolina',
+        'ND': 'North Dakota',
+        'NE': 'Nebraska',
+        'NH': 'New Hampshire',
+        'NJ': 'New Jersey',
+        'NM': 'New Mexico',
+        'NV': 'Nevada',
+        'NY': 'New York',
+        'OH': 'Ohio',
+        'OK': 'Oklahoma',
+        'OR': 'Oregon',
+        'PA': 'Pennsylvania',
+        'PR': 'Puerto Rico',
+        'RI': 'Rhode Island',
+        'SC': 'South Carolina',
+        'SD': 'South Dakota',
+        'TN': 'Tennessee',
+        'TX': 'Texas',
+        'UT': 'Utah',
+        'VA': 'Virginia',
+        'VI': 'Virgin Islands',
+        'VT': 'Vermont',
+        'WA': 'Washington',
+        'WI': 'Wisconsin',
+        'WV': 'West Virginia',
+        'WY': 'Wyoming',
+        'ON': 'Canada',
+        'PQ': 'Canada'
+    }
+
+# class implementation 
+class stadiums():
+    def __init__(self, url_1, url_2, url_3):
+        # create empty dataframe with the column titles we want
+        self.data = pd.DataFrame(columns = ['team', 'location', 'stadium', 'capacity', 'opened', 'closed'])
+        self.url_1 = url_1
+        self.url_2 = url_2
+        self.url_3 = url_3
+    
+    def get_data(self):
+        # gather the data for each of the urls
+        self.stadium_data(self.url_1)
+        self.stadium_data(self.url_2)
+        self.past_stadium(self.url_3)
+        # clean the data we have gathered
+        self.clean()
+        return self.data
+
+    # scrapes the past stadium data
+    def past_stadium(self, url):
+        # create our BeautifulSoup object
+        r = requests.get(url)
+        soup = BeautifulSoup(r.text, 'html.parser')
+
+        # find all stadium items we need to look at
+        ballparks = soup.find_all('a', class_ = 'stadium-item', href = True)
+
+        # loop each ballpark found above
+        for ballpark in ballparks:
+            # grab name of the ballpark
+            name = ballpark.find('div', class_ = 'title').text
+            # grab location of ballpark
+            location = ballpark.find('div', class_ = 'city').text.strip()
+            # create request and BeautifulSoup object for this ballpark using href link
+            tmp_r = requests.get(ballpark['href'])
+            tmp_soup = BeautifulSoup(tmp_r.text, 'html.parser')
+            # grab information from html
+            info = tmp_soup.find_all('div', class_ = 'facts-col')
+            tmp = ''
+            # create complete string with all the information found above
+            for x in info:
+                tmp = tmp + x.find('p').text + '\n'
+            
+            # use regular expression to select team name from string
+            team = re.search(r'(?:Tenant|Tenants):\s*(.*?)\n', tmp).group(1)
+            # use regular expression to select stadium capacity
+            capacity = re.search(r'Capacity:\s*(.*?)\n', tmp).group(1)
+            # use regular expression to select year opened
+            opened = re.search(r'(?:Opened|Opening):\s*(.*?)\n', tmp).group(1)
+            # use regular expression to select year closed 
+            closed = re.search(r'Closed:\s*(.*?)\n', tmp)
+
+            # RFK STADIUM is the Washington Nationals Stadium, and while opened before 2005, wasn't used by the team until then
+            if name == 'RFK STADIUM':
+                opened = ', 2005'
+            
+            # past stadiums must have a closed date, so if none is found we create one
+            if closed == None:
+                # find the stadium that replaced it 
+                closed = self.data[self.data['location'] == location]['opened'].to_string()
+                closed = re.search(r',\s*(.*?)(?:,|\s*\(|$)', closed).group(1)
+                closed = int(closed) - 1
+                closed = f'{closed}'
+
+                
+            else:
+                # create the closed variable that was found
+                closed = closed.group(1)
+                closed = re.search(r',\s*(.*?)(?:,|\s*\(|$)', closed).group(1)
+            
+            # only add stadiums in our desired time interval
+            if int(closed) >= 2003:
+                # create a row to be appended to the data
+                row = {'team' : team, 'location' : location, 'stadium' : name, 'capacity' : capacity, 'opened' : opened, 'closed' : closed}
+                self.data = pd.concat([self.data, pd.DataFrame(data = row, index = [len(self.data) + 1])], ignore_index = True)
+            tmp_r.close()
+        r.close()
+
+
+        
+    def stadium_data(self, url):
+        r = requests.get(url)
+        soup = BeautifulSoup(r.text, 'html.parser')
+        ballparks = soup.find_all('a', class_ = 'stadium-item', href = True)
+
+        for ballpark in ballparks:
+            name = ballpark.find('div', class_ = 'title').text
+            location = ballpark.find('div', class_ = 'city').text.strip()
+            tmp_r = requests.get(ballpark['href'])
+            tmp_soup = BeautifulSoup(tmp_r.text, 'html.parser')
+            info = tmp_soup.find('div', class_ = 'facts-col')
+            info = info.find('p').text
+            team = re.search(r'-(?:Tenant|Tenants):\s*(.*?)\n', info).group(1)
+            capacity = re.search(r'-Capacity:\s*(.*?)\n', info).group(1)
+            opened = re.search(r'-(?:Opened|Opening):\s*(.*?)\n', info).group(1)
+
+            row = {'team' : team, 'location' : location, 'stadium' : name, 'capacity' : capacity, 'opened' : opened, 'closed' : '-'}
+            self.data = pd.concat([self.data, pd.DataFrame(data = row, index = [len(self.data) + 1])], ignore_index = True)
+            tmp_r.close()
+        r.close()
+    
+    def clean(self):
+        data = self.data
+        data[['team']] = data['team'].str.extract(r'\s*(.*?)(?:,|\(|$)')
+        data['team'] = data['team'].str.strip()
+        data['team'] = data['team'].str.replace('Florida', 'Miami')
+        data['team'] = data['team'].str.replace('Indians', 'Guardians')
+        data['location'] = data['location'].str.strip()
+        data['capacity'] = data['capacity'].str.replace(',', '')
+        data['capacity'] = data['capacity'].str.extract(r'(\d+)').astype('int')
+        data[['city']] = data['location'].str.extract(r'(.*?)(?:,)')
+        data['city'] = data['city'].replace(['Bronx', 'Queens', 'Flushing'], 'New York City')
+        data[['state']] = data['location'].str.extract(r',\s*(\w+)')
+        data[['opened']] = data['opened'].str.extract(r',\s*(.*?)(?:,|\s*\(|$)')
+        data[['city']] = data['city'].str.extract(r'(.*?)(?:\s*City|$)')
+        data['state'] = data['state'].map(STATES)
+        data['location'] = data['city'] + ', ' + data['state']
+        self.data = data[['team', 'location', 'stadium', 'capacity', 'opened', 'closed']].dropna().reset_index(drop = True)
+
+z = stadiums('https://www.ballparksofbaseball.com/american-league/', 'https://www.ballparksofbaseball.com/national-league/', 
+            'https://www.ballparksofbaseball.com/past-ballparks/')
+df_stadium = z.get_data()
+df_stadium.to_csv('DATA/stadiums.csv', index = False)
+
+       
+---
+```
+</div>
+</details>
