@@ -9,15 +9,15 @@ kramdown:
   parse_block_html: true
 ---
 
-## Background
+## Introduction
 
-As a fan of the major league baseball team the Oakland Athletics, I have seen and heard all of the news surrounding the pending move of the team to Las Vegas. The Oakland Athletics first moved to Oakland in 1968 and have been there ever since. With the rumors of the move, I wondered what potential causes of this move could be. I have heard rumors that a lack of fans is a major reason for the move, and decided I wanted to explore that further. I wanted to know what factors would contribute to overall fan attendance to see what the potential root of the "lack of fan support" could be.  
+Major League Baseball (MLB) is one of the four major U.S. sports, and has recently been experiencing a decline in popularity. Attendance numbers appear to be dropping at rapid rates across the league news spreads of the MLB's sudden loss of popularity to sports like basketbal and football. Teams like the Oakland Athletics who appear to be experiencing extremely low fan attendance numbers have looked at moving locations to areas where a new fanbase could be created to increase attendance numbers. 
 
-I gathered and scraped several different websites and created 5 seperate datasets that I combined into one large dataset in the hopes of exploring this question further. 
+With the MLB experiencing this decline, I decided to look into some potential factors that contribute to fan attendance for any given team. I gathered and scraped data from 2003 to 2022 in my attempt to dive into this issue further. Through this blog post I will demonstrate the code that I used to create my dataset, and in my next post I will dive into my analysis of the data collected.
+
+In total I created and combined 5 seperate datasets. I created a payroll, an attendance, a season, a stadium, and a population dataset in order to get all the information I felt would be most useful in exploring this topic. I used python's pandas and BeautifulSoup to collect and clean the data. I gathered data from multiple different webistes and location as we will explore below. For each of the datasets described below I have linked both the CSV file created from my python code as well as the full code I used to scrape and clean that dataset.
 
 ## Data Collection
-
-To collect this data, I created 5 different classes to create the 5 different datsets that I hoped to combine. I scraped and gathered attendance, payroll, season, <a href="https://github.com/acooney613/stat386-mlb_attendance/blob/main/stadium.py"> stadium data</a>, and <a href="https://github.com/acooney613/stat386-mlb_attendance/blob/main/population.py"> population data</a> data for each MLB team from 2003 until 2022. I used various python libraries such as pandas and BeautifulSoup to scrape and clean most of the data. 
 
 The <a href="https://github.com/acooney613/stat386-mlb_attendance/blob/main/DATA/attendance.csv">attendance</a> data that I collected contains columns for team, year, and average attendance. The average attendance is the teams average home attendance for the year specified. 
 Full Code: <a href="https://github.com/acooney613/stat386-mlb_attendance/blob/main/attendance.py">attendance code</a>
