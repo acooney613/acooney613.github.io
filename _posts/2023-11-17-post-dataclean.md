@@ -56,4 +56,6 @@ Full Code: <a href="https://github.com/acooney613/stat386-mlb_attendance/blob/ma
 
 ## Conclusion
 
-While this dataset may not be perfect, I believe it is a good start at exploring some potential contributing factors for attendance numbers across the league. In a future blog post I will discuss some of the potential findings in the data along with key graphics to display some of the relationships that may exist with the variables that I have chosed to look at. If you truly enjoyed this topic I encourage you to try some on your own, and update and change the dataset to perform your own exploration of baseball or any topic of your choice!
+While this dataset may not be perfect, I believe it is a good start at exploring some potential contributing factors for attendance numbers across the league. In a future blog post I will discuss some of the potential findings in the data along with key graphics to display some of the relationships that may exist with the variables that I have chosed to look at. If you truly enjoyed this topic I encourage you to try some on your own, and update and change the dataset to perform your own exploration of baseball or any topic of your choice! Below is the link to my full repo if you would like to look at my full project!
+
+<a href="https://github.com/acooney613/stat386-mlb_attendance/tree/main"> FULL REPO</a>
