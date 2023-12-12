@@ -381,21 +381,33 @@ class stadiums():
 
         
     def stadium_data(self, url):
+        # create BeautifulSoup object
         r = requests.get(url)
         soup = BeautifulSoup(r.text, 'html.parser')
+
+        # grab all ballparks
         ballparks = soup.find_all('a', class_ = 'stadium-item', href = True)
 
+        # loop through ballparks
         for ballpark in ballparks:
+            # grab name of ballpark
             name = ballpark.find('div', class_ = 'title').text
+            # grab location of ballpark
             location = ballpark.find('div', class_ = 'city').text.strip()
+            # grab link to more information and create BeautifulSoup object
             tmp_r = requests.get(ballpark['href'])
             tmp_soup = BeautifulSoup(tmp_r.text, 'html.parser')
+            # gather all info for ballpark
             info = tmp_soup.find('div', class_ = 'facts-col')
             info = info.find('p').text
+            # use regular expression to grab team name
             team = re.search(r'-(?:Tenant|Tenants):\s*(.*?)\n', info).group(1)
+            # use regular expression to grab capacity
             capacity = re.search(r'-Capacity:\s*(.*?)\n', info).group(1)
+            # use regular expression to grab year opened
             opened = re.search(r'-(?:Opened|Opening):\s*(.*?)\n', info).group(1)
 
+            # create row to be appended to data
             row = {'team' : team, 'location' : location, 'stadium' : name, 'capacity' : capacity, 'opened' : opened, 'closed' : '-'}
             self.data = pd.concat([self.data, pd.DataFrame(data = row, index = [len(self.data) + 1])], ignore_index = True)
             tmp_r.close()
@@ -403,25 +415,35 @@ class stadiums():
     
     def clean(self):
         data = self.data
+        # extract the team name from team
         data[['team']] = data['team'].str.extract(r'\s*(.*?)(?:,|\(|$)')
         data['team'] = data['team'].str.strip()
+        # replace to fit better for future merge
         data['team'] = data['team'].str.replace('Florida', 'Miami')
         data['team'] = data['team'].str.replace('Indians', 'Guardians')
+        # remove whitespace from location
         data['location'] = data['location'].str.strip()
+        # remove `,` from capacity and convert to type 'int'
         data['capacity'] = data['capacity'].str.replace(',', '')
         data['capacity'] = data['capacity'].str.extract(r'(\d+)').astype('int')
+        # grab city from location and replace for merging later
         data[['city']] = data['location'].str.extract(r'(.*?)(?:,)')
         data['city'] = data['city'].replace(['Bronx', 'Queens', 'Flushing'], 'New York City')
-        data[['state']] = data['location'].str.extract(r',\s*(\w+)')
-        data[['opened']] = data['opened'].str.extract(r',\s*(.*?)(?:,|\s*\(|$)')
         data[['city']] = data['city'].str.extract(r'(.*?)(?:\s*City|$)')
+        # grab state from location
+        data[['state']] = data['location'].str.extract(r',\s*(\w+)')
         data['state'] = data['state'].map(STATES)
+        # update the location format to assist merging later
         data['location'] = data['city'] + ', ' + data['state']
+        # extract when opened
+        data[['opened']] = data['opened'].str.extract(r',\s*(.*?)(?:,|\s*\(|$)')
         self.data = data[['team', 'location', 'stadium', 'capacity', 'opened', 'closed']].dropna().reset_index(drop = True)
-
+# call class
 z = stadiums('https://www.ballparksofbaseball.com/american-league/', 'https://www.ballparksofbaseball.com/national-league/', 
             'https://www.ballparksofbaseball.com/past-ballparks/')
+# initiate data collection
 df_stadium = z.get_data()
+# write to csv
 df_stadium.to_csv('DATA/stadiums.csv', index = False)
 
        
