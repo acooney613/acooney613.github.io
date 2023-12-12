@@ -34,3 +34,11 @@ Full Code: <a href="https://github.com/acooney613/stat386-mlb_attendance/blob/ma
 The <a href="https://github.com/acooney613/stat386-mlb_attendance/blob/main/DATA/population.csv">population</a> data that I collected contains columns for location, year, and the population of that area for the given year. 
 Full Code: <a href="https://github.com/acooney613/stat386-mlb_attendance/blob/main/population.py">population code</a>
 
+## Combining The Data
+
+Once I scraped and cleaned all of the data for each subsection, I combined them all into one larger dataset with all of the information I felt was most relevant. The <a href="https://github.com/acooney613/stat386-mlb_attendance/blob/main/mlb_attendance.csv"> MLB Attendance</a> dataset that I created contains columns for team, year, average home attendance, stadium name, location of the stadium, fan capacity for the stadium, population of the surrounding area, payroll for that season, team's wins for that season, team's losses for that season, win-loss percentage for that season, final series made that season, and the result of the final series they made. 
+
+While combining the data it is important to note that some factors such as team name and location had to be modified in the previous datasets in order to make a merge of the datasets possible. It is also important to note that for the year 2020 there are no MLB attendance numbers due to COVID-19, so the attendance numbers for that year should be blank. 
+
+Full Code: <a href="https://github.com/acooney613/stat386-mlb_attendance/blob/main/combine.py"> combination code</a>
+
