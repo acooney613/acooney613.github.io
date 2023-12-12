@@ -125,21 +125,11 @@ df_attendance = y.get_data()
 
 ## Payroll Data
 
-The first step to create this data set was to scrape and clean data for each teams payroll. I chose to scrape payroll data from 2003 through 2022. Below I will demonstrate some sample code I used to scrape and clean the payroll data. I used information found on 'thebaseballcube' website for this project.
+The next step for the data collection involves grabbing the team payroll data for each year we wish to look at. I aslso used pd.read_html for this, as Beautiful had struggles. I used information from thebaseballcube to gather this data. 
 
-### Scraping the Data
+I scraped this data for each year in a very similar way to the previous data, editing the year of the url I grabbed the data from. I then cleaned the data by selecting the team, year, and payroll column from the scraped and combined information. It is important to note that for this data as well changing the name of the teams is crucial for combining the data later. 
 
-To scrape this data, I simply used pandas read_html() function. This function takes the url you want to scrape as an argument, and returns a list of the dataframes it finds. Selecting the table you want from this output, we can begin the cleaning process to make the dataset what we want it to be. 
-
-### Cleaning the Data
-
-Luckily, this dataset is fairly simple to clean. We just need to select the columns that give the team name and payroll data. We also need to add column for the year we are looking at so that combining the data is much easier later. 
-
-*** Important Note ***
-
-When cleaning this data, in order to combine the data with the other data sets we will scrape shortly the names of some of the teams must be changed (i.e. Cleveland Guardians)
-
-In the dropdown below is my full code and class implementation for this particular dataset.
+In the dropdown below is my full code and class implementation for the payroll dataset. 
 
 <details>
 <summary style = 'color: blue;'> 
