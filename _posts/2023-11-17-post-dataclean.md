@@ -20,10 +20,12 @@ I gathered and scraped several different websites and created 5 seperate dataset
 To collect this data, I created 5 different classes to create the 5 different datsets that I hoped to combine. I scraped and gathered attendance, payroll, <a href="https://github.com/acooney613/stat386-mlb_attendance/blob/main/season.py"> season data</a>, <a href="https://github.com/acooney613/stat386-mlb_attendance/blob/main/stadium.py"> stadium data</a>, and <a href="https://github.com/acooney613/stat386-mlb_attendance/blob/main/population.py"> population data</a> data for each MLB team from 2003 until 2022. I used various python libraries such as pandas and BeautifulSoup to scrape and clean most of the data. 
 
 The attendance data that I collected contains columns for team, year, and average attendance. The average attendance is the teams average home attendance for the year specified. 
-Full Code: <a href="https://github.com/acooney613/stat386-mlb_attendance/blob/main/DATA/attendance.csvy">attendance</a>
+Full Code: <a href="https://github.com/acooney613/stat386-mlb_attendance/blob/main/DATA/attendance.csv">attendance</a>
 
-The <a href="https://github.com/acooney613/stat386-mlb_attendance/blob/main/DATA/attendance.csv">payroll</a> data that I collected contains columns for team, year, and payroll. The payroll is the amount of money spent on players for the year specified. 
+The <a href="https://github.com/acooney613/stat386-mlb_attendance/blob/main/DATA/payroll.csv">payroll</a> data that I collected contains columns for team, year, and payroll. The payroll is the amount of money spent on players for the year specified. 
 Full Code: <a href="https://github.com/acooney613/stat386-mlb_attendance/blob/main/payroll.py"> payroll data</a>
+
+The <a href="https://github.com/acooney613/stat386-mlb_attendance/blob/main/DATA/season.csv">season</a> data that I collected contains columns for team, wins, losses, win-loss percentage, year, farthest series made in the postseason, and the result of the final series they made. If a team did not make the postseason, I specified by inserting "Missed Postseason" into the series column.
 
 
 
