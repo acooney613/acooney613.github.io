@@ -17,9 +17,7 @@ I gathered and scraped several different websites and created 5 seperate dataset
 
 ## Data Collection
 
-To collect this data, I created 5 different classes to create the 5 different datsets that I hoped to combine. I scraped and gathered <li class="masthead__menu-item">
-    <a href="https://github.com/acooney613/stat386-mlb_attendance/blob/main/attendance.py">Attendance Full Code</a>
-</li> attendance data, 
+To collect this data, I created 5 different classes to create the 5 different datsets that I hoped to combine. I scraped and gathered <a href="https://github.com/acooney613/stat386-mlb_attendance/blob/main/attendance.py">attendance</a> attendance data, payroll data, season data, stadium data, and population data for each MLB team from 2003 until 2022. I used various python libraries such as pandas and BeautifulSoup to scrape and clean most of the data. 
 
 
 
