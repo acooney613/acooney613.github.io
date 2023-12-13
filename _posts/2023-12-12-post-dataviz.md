@@ -21,4 +21,22 @@ As explained in my previous the previous post, I am looking at potential contrib
 
 The first thing I would like to take a look at is 
 
-<iframe src = 'sales_chart.html'></iframe>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embedding Plotly Chart</title>
+</head>
+<body>
+    <h1>My Chart Post</h1>
+
+    <p>Below is the embedded Plotly chart:</p>
+
+    <!-- Replace the URL with the raw URL of your Plotly chart HTML file -->
+    <iframe src="https://raw.githubusercontent.com/acooney613/stat386-mlb_attendance/main/wins_by_proportion.html" width="800" height="600"></iframe>
+
+    <p>Feel free to add more content to your post!</p>
+</body>
+</html>
