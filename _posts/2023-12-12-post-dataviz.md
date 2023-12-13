@@ -25,15 +25,13 @@ Before I started diving into the data I decided to create several new columns to
 ---
 # read in the data
 df = pd.read_csv('mlb_attendance.csv')
+
 # get proportion of stadium filled
 df['proportion'] = df['average attendance'] / df['capacity']
 
 # add the numbering and map to the series made in the series variable
 numbering = {'World Series' : 4, 'NLCS' : 3, 'ALCS' : 3, 'ALDS' : 2, 'NLDS' : 2, 'NLWC' : 1, 'ALWC' : 1, 'Missed Postseason' : 0}
-df['postseason_code'] = df['series'].map(numbering)
-
-# variable for if they made the postseason or not
-df['postseason'] = np.where(df['series'] != 'Missed Postseason', True, False)
+df['postseason'] = df['series'].map(numbering)
 
 # variable to give the end result of the season
 df['series_result'] = df['result'] + ' ' + df['series']
