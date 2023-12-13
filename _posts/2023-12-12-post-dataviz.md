@@ -51,7 +51,7 @@ The largest correlation value if between wins and postseason, which makes sense 
 
 The top two correlation values, other than wins and postseason, are both 0.45 and show that there is potentially positive correlation between fan attendance and both wins and payroll. Postseason also has a fairly positive correlation with fan attendance with a value of 0.37. Postseason is a variable which describes how far a team got in the postseason (i.e. lost ALCS). In this blog post I will explore some of the relationships found in the heatmap above. 
 
-### Playoff Success
+### Playoff Success and Fan Attendance
 
 After getting the values from the correlation matrix I wanted to take a deeper dive into postseason success and various factors that may be contributing to a teams overall success. I first made a barchart between the end of season result and the overall fan attendance as shown below. 
 
@@ -65,8 +65,10 @@ I dove deeper into this thought of fan attendance and decided to create a barcha
 
 <img src = '/assets/images/winner.png'>
 
-Looking at this plot we can see that, on average, the team that ended up winning the world series had a larger average fan attendance for the season than the teams that ended up losing the world series. The two largest gaps in this data come in the years 2014 and 2016, where the winners clearly had a much higher fan attendance rate than the loser. 
+Looking at this plot we can see that, on average, the team that ended up winning the world series had a larger average fan attendance for the season than the teams that ended up losing the world series. The two largest gaps in this data come in the years 2014 and 2016, where the winners clearly had a much higher fan attendance rate than the loser. In years such as 2013, 2017, and 2019 however, the losing team had a larger fan attendance proportion than the winner. Overall this plot appears to agree with the correlation matrix in saying that teams that have greater fan attendance also tend to do better in the postseason than teams with less fan attendance. 
 
+
+## Playoff Success and Player Payroll
 Is fan attendance the only metric for postseason success however? To answer this question I looked at the relationship between postseason success and team payroll. Looking at the plot below we can see that on average the teams that missed the postseason entirely spent far less on players than the teams that made the playoffs. 
 
 <img src = '/assets/images/barchart.png'>
