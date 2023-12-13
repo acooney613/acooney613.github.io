@@ -23,7 +23,7 @@ When thinking about answering the question of what factors affect fan attendance
 
 I first wanted to make sure that I had team attendance numbers for all of the years I was going to be looking at. I used espn to gather the data I needed for this.
 
-The <a href="https://github.com/acooney613/stat386-mlb_attendance/blob/main/DATA/attendance.csv">attendance</a> data that I collected contains columns for team, year, and average attendance. The average attendance is the teams average home attendance for the year specified.
+The <a href="https://github.com/acooney613/stat386-mlb_attendance/blob/main/DATA/attendance.csv" target = "_blank">attendance</a> data that I collected contains columns for team, year, and average attendance. The average attendance is the teams average home attendance for the year specified.
 Full Code: <a href="https://github.com/acooney613/stat386-mlb_attendance/blob/main/attendance.py">attendance code</a>
 
 Next I wanted to get the teams player payroll data so that I could look at how much teams are spending on players for any given season.
