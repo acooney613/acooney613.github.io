@@ -52,8 +52,14 @@ df['code'] = df['series'].map(numbering)
 
 ## Exploration
 
-The first thing I decided to look at when exploring the data was a correlation matrix between the numeric variables in and attendance. I wanted to see if there were some variables that would be more interesting to explore before I dove in. 
+The first thing I wanted to explore was the potential relationship between fan attendance numbers and a teams overall success measured by their postseason run. Looking at the image below we can see that, on average, teams that make the posteason filled more of their stadium than teams that missed the postseason. One of the largest bars belonged to teams that would go on to win the world series, while the second smallest bar belonged to teams that missed the playoffs entirely. 
 
-<img src = '/assets/images/heatmap.png'>
+<img src = '/assets/images/result.png'>
 
-Looking at the heatmap, we can see that both payroll and wins are correlated the same with proportion of stadium capacity filled. They both have a fairly strong positive correlation with this fan attendance metric. 
+This relationship could potentially show the importance of fan attendance numbers for a team looking at making a deeper playoff run, and speaks to the 'homefield advantage' that most teams strive for. Is fan attendance the only metric for postseason success however?
+
+To answer this question I looked at the relationship between postseason runs and a teams payroll. Looking at the plot below we can see that the teams that missed the postseason entirely spent far less on players on average than teams that made the playoffs. 
+
+<img src = 'assets/images/barchart.png'>
+
+The world series bar once again has one of the higher numbers, with the largest bar coming from the ALCS loser. With those missing the postseason having such a low payroll however, this chart does show that teams that spend more tend to also go a lot farther than teams that spend less. 
