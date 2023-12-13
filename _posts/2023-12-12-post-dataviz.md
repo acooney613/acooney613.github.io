@@ -11,7 +11,7 @@ kramdown:
 
 *** Important Note ***
 
-If you have not checked out my previous post <a href="https://acooney613.github.io/2023/11/17/post-dataclean.html" target = "_blank">Contributing Factors for MLB Fan Attendance (Data Collection and Cleaning) </a> I encourage you to take a look as it explains the motivation behind using this data and dives into the collection and cleaning process that I used for the dataset we will explore below. 
+If you have not checked out my previous post <a href="https://acooney613.github.io/2023/12/10/post-dataclean.html" target = "_blank">Contributing Factors for MLB Fan Attendance (Data Collection and Cleaning) </a> I encourage you to take a look as it explains the motivation behind using this data and dives into the collection and cleaning process that I used for the dataset we will explore below. 
 
 ## Introduction
 
