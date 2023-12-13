@@ -61,9 +61,17 @@ The first thing I wanted to explore was the potential relationship between fan a
 
 Looking at the image above we can see that, on average, teams that make the posteason filled more of their stadium than teams that missed the postseason. One of the largest bars belonged to teams that would go on to win the world series, while the second smallest bar belonged to teams that missed the playoffs entirely. This relationship does look consistent with what we found in the correlation matrix above as we received a correlation coefficient value of 0.37 meaning that teams that make it farther in the playoffs also tend to have higher fan attendance. This relationship could potentially show the importance of fan attendance numbers for a team looking at making a deeper playoff run, and speaks to the 'homefield advantage' that most teams strive for. 
 
+I dove deeper into this thought of fan attendance and decided to create a barchart using the World Series resultss from 2012 to 2022 (excluding 2020 as there is no attendance data) to see if there was a common trend.
+
+<img src = '/assets/images/winner.png'>
+
+Looking at this plot we can see that, on average, the team that ended up winning the world series had a larger average fan attendance for the season than the teams that ended up losing the world series. The two largest gaps in this data come in the years 2014 and 2016, where the winners clearly had a much higher fan attendance rate than the loser. 
+
 Is fan attendance the only metric for postseason success however? To answer this question I looked at the relationship between postseason success and team payroll. Looking at the plot below we can see that on average the teams that missed the postseason entirely spent far less on players than the teams that made the playoffs. 
 
 <img src = '/assets/images/barchart.png'>
 
 The bar for world series won contains one of the higher values once again and the smallest bar belongs to teams that missed the postseason entirely. This is fairly consistent with the relationship found in the heatmap since both show there is a positive relationship between payroll and postseason success.  
+
+
 
