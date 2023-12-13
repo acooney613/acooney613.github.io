@@ -15,7 +15,7 @@ Major League Baseball (MLB) is one of the four major U.S. sports, and has recent
 
 With the MLB experiencing this decline, I decided to look into some potential factors that contribute to fan attendance for any given team. I gathered and scraped data from 2003 to 2022 in my attempt to dive into this issue further. Through this blog post I will demonstrate the code that I used to create my dataset, and in my next post I will dive into my analysis of the data collected.
 
-In total I created and combined 5 seperate datasets. I created a payroll, an attendance, a season, a stadium, and a population dataset in order to get all the information I felt would be most useful in exploring this topic. I used python's pandas and BeautifulSoup to collect and clean the data. I gathered data from multiple different webistes and location as we will explore below. For each of the datasets described below I have linked both the CSV file created from my python code as well as the full code I used to scrape and clean that dataset.
+In total I created and combined 5 seperate datasets. I created a payroll, an attendance, a season, a stadium, and a population dataset in order to get all the information I felt would be most useful in exploring this topic. I used python's pandas and BeautifulSoup to collect and clean the data. I gathered data from multiple different websites and locations as we will explore below. For each of the datasets described below I have linked both the CSV file created from my python code as well as the full code I used to scrape and clean that dataset.
 
 ## Data Collection
 
