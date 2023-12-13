@@ -102,5 +102,8 @@ The plot above shows that there is a potential positive linear relationship betw
 
 ## Conclusion
 
-After completing my exploratory analysis I discovered that fan attendance may have an impact on postseason success, and teams that win more games tend to also 
+Using the plots above I was able to learn more about the data I gathered and some potential relationships that may exist within the numbers. I learned that a team's postseason success may be influenced by their fan attendance and a team's payroll and season's wins may be related to the number of fans they have on average.
 
+I encourage you to use the data that I have collected and gathered in my other blog post (<a href="https://acooney613.github.io/2023/12/10/post-dataclean.html" target = "_blank">link here</a>) and do your own exploratory anaylsis! 
+
+Here is the link to my <a href="https://github.com/acooney613/stat386-mlb_attendance" target = "_blank">full repo</a>, as well as the link to the file I performed my eda in (link here) 
