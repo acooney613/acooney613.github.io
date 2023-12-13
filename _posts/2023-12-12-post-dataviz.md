@@ -41,15 +41,6 @@ df['series_result'] = df['series_result'].fillna('missed postseason')
 ---
 ```
 
-I then created level variables for the different postseason categories so I could look at the teams that made it farther than others. To do this I used:
-
-```python
----
-numbering = {'World Series' : 4, 'NLCS' : 3, 'ALCS' : 3, 'ALDS' : 2, 'NLDS' : 2, 'NLWC' : 1, 'ALWC' : 1, 'Missed Postseason' : 0}
-df['code'] = df['series'].map(numbering)
----
-```
-
 ## Exploration
 
 The first thing I wanted to explore was the potential relationship between fan attendance numbers and a teams overall success measured by their postseason run. Looking at the image below we can see that, on average, teams that make the posteason filled more of their stadium than teams that missed the postseason. One of the largest bars belonged to teams that would go on to win the world series, while the second smallest bar belonged to teams that missed the playoffs entirely. 
