@@ -36,6 +36,9 @@ df['postseason'] = df['series'].map(numbering)
 # variable to give the end result of the season
 df['series_result'] = df['result'] + ' ' + df['series']
 df['series_result'] = df['series_result'].fillna('missed postseason')
+
+# make variable to indicate if they made postseason
+df['made postseason'] = np.where(df['series'] != 'Missed Postseason', 'Yes', 'No')
 ---
 ```
 
@@ -68,14 +71,14 @@ I dove deeper into this thought of fan attendance and decided to create a barcha
 Looking at this plot we can see that, on average, the team that ended up winning the world series had a larger average fan attendance for the season than the teams that ended up losing the world series. The two largest gaps in this data come in the years 2014 and 2016, where the winners clearly had a much higher fan attendance rate than the loser. In years such as 2013, 2017, and 2019 however, the losing team had a larger fan attendance proportion than the winner. Overall this plot appears to agree with the correlation matrix in saying that teams that have greater fan attendance also tend to do better in the postseason than teams with less fan attendance. 
 
 
-## Playoff Success and Player Payroll
+### Playoff Success and Player Payroll
 Is fan attendance the only metric for postseason success however? To answer this question I looked at the relationship between postseason success and team payroll. Looking at the plot below we can see that on average the teams that missed the postseason entirely spent far less on players than the teams that made the playoffs. 
 
 <img src = '/assets/images/barchart.png'>
 
 The bar for world series won contains one of the higher values once again and the smallest bar belongs to teams that missed the postseason entirely. This is fairly consistent with the relationship found in the heatmap since both show there is a positive relationship between payroll and postseason success.  
 
-## Factors Contributing to Fan Attendance
+### Factors Contributing to Fan Attendance
 
 The final piece I will explore in this blog is the effects of wins and payroll on fan attendance. The correlation matrix showed that these two variables had the strongest relationships with fan attendance, so in the plots below we will explore this idea further. 
 
@@ -85,5 +88,19 @@ Looking first at a scatterplot for fan attendance by win-loss percentage, we can
 
 As the win-loss variable increases, the total proportion of stadium filled also increases on average. The trend line in the center displays this relationship as it contains a positive slope, showing an increase in y (stadium filled) with an increase in x (win-loss). This is consistent with the correlation matrix, as both show a positive correlation between win-loss percentage and proportion of fan attendance. 
 
+Looking next at a scatterplot for log of team payroll and proportion of stadium filled colored by whether or not a team made the postseason. The overall plot shows a fairly positive trend for both teams that made the postseason and teams that did not.
 
+<img src = '/assets/images/postseason.png'>
+
+The plot shows that, on average, teams that made the postseason tended to have higher stadium attendance for the same payroll value compared to teams that did not make the postseason. This is consistent with the previous findings, as teams we found earlier that teams that do better tend to also have a greater fan attendance. 
+
+Finally, I took a look at a team's win-loss percentage by the team's payroll to see if there was actually a relationship between the two.
+
+<img src = '/assets/images/wins_payroll.png'>
+
+The plot above shows that there is a potential positive linear relationship between a team's payroll and their record. As the payroll value goes up, a team's record also tends to increase. This is also consistent with the correlation value found in the heatmap earlier in the blog, which returned 0.34 as the correlation coefficient between these variables. 
+
+## Conclusion
+
+After completing my exploratory analysis I discovered that fan attendance may have an impact on postseason success, and teams that win more games tend to also 
 
