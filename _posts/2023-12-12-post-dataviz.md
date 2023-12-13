@@ -43,14 +43,30 @@ df['series_result'] = df['series_result'].fillna('missed postseason')
 
 ## Exploration
 
+### Initial Exploration
+
+Before I dove fully into my data, I decided to use a correlation matrix to see if there were any relationships between the variables that I wanted to explore more. I created a heatmap (as shown below) of the correlation values for each of the relationships. 
+
+<img src = '/assets/images/heatmap.png'>
+
+The largest correlation value if between wins and postseason, which makes sense given that in order to make the postseason a team has to win more games, so the relationship should be extremely positive and correlated.
+
+The top two correlation values, other than wins and postseason, are both 0.45 and show that there is potentially positive correlation between fan attendance and both wins and payroll. Whether or not a team made the postseason is also fairly related with fan attendance with a correlation value of 0.35. In this blog post I will explore some of the relationships found in the heatmap above. 
+
+### Playoff Success
+
+After getting the values from the correlation matrix I wanted to take a deeper dive into postseason success and various factors that may be contributing to a teams overall success. I first made a barchart between the end of season result and the overall fan attendance as shown below. 
+
 The first thing I wanted to explore was the potential relationship between fan attendance numbers and a teams overall success measured by their postseason run. Looking at the image below we can see that, on average, teams that make the posteason filled more of their stadium than teams that missed the postseason. One of the largest bars belonged to teams that would go on to win the world series, while the second smallest bar belonged to teams that missed the playoffs entirely. 
 
+<p>Fig. 1</p>
 <img src = '/assets/images/result.png'>
 
-This relationship could potentially show the importance of fan attendance numbers for a team looking at making a deeper playoff run, and speaks to the 'homefield advantage' that most teams strive for. Is fan attendance the only metric for postseason success however?
+Looking at the image above we can see that, on average, teams that make the posteason filled more of their stadium than teams that missed the postseason. One of the largest bars belonged to teams that would go on to win the world series, while the second smallest bar belonged to teams that missed the playoffs entirely. 
 
-To answer this question I looked at the relationship between postseason runs and a teams payroll. Looking at the plot below we can see that the teams that missed the postseason entirely spent far less on players on average than teams that made the playoffs. 
+This relationship could potentially show the importance of fan attendance numbers for a team looking at making a deeper playoff run, and speaks to the 'homefield advantage' that most teams strive for. Is fan attendance the only metric for postseason success however? To answer this question I looked at the relationship between postseason success and team payroll. Looking at the plot below we can see that on average the teams that missed the postseason entirely spent far less on players than the teams that made the playoffs. 
 
-<img src = 'assets/images/barchart.png'>
+<img src = '/assets/images/barchart.png'>
 
 The world series bar once again has one of the higher numbers, with the largest bar coming from the ALCS loser. With those missing the postseason having such a low payroll however, this chart does show that teams that spend more tend to also go a lot farther than teams that spend less. 
+
