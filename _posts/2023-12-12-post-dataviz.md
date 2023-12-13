@@ -119,4 +119,4 @@ Using the plots above I was able to learn more about the data I gathered and som
 
 Feel free to use the data that I have collected and gathered in my other blog post (<a href="https://acooney613.github.io/2023/12/10/post-dataclean.html" target = "_blank">link here</a>) and do your own exploratory anaylsis! 
 
-Here is the link to my <a href="https://github.com/acooney613/stat386-mlb_attendance" target = "_blank">full repo</a>, as well as the link to the file I performed my eda in (<a href = 'https://github.com/acooney613/stat386-mlb_attendance/blob/main/EDA.py' target = "_blank">link here</a>) 
+Here is the link to my <a href="https://github.com/acooney613/stat386-mlb_attendance" target = "_blank">full repo</a>, as well as the link to the file I performed my EDA in (<a href = 'https://github.com/acooney613/stat386-mlb_attendance/blob/main/EDA.py' target = "_blank">link here</a>) 
