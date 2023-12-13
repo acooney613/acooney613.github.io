@@ -51,7 +51,7 @@ Before I dove fully into my data, I decided to use a correlation matrix to see i
 
 The largest correlation value if between wins and postseason, which makes sense given that in order to make the postseason a team has to win more games, so the relationship should be extremely positive and correlated.
 
-The top two correlation values, other than wins and postseason, are both 0.45 and show that there is potentially positive correlation between fan attendance and both wins and payroll. Whether or not a team made the postseason is also fairly related with fan attendance with a correlation value of 0.35. In this blog post I will explore some of the relationships found in the heatmap above. 
+The top two correlation values, other than wins and postseason, are both 0.45 and show that there is potentially positive correlation between fan attendance and both wins and payroll. Postseason also has a fairly positive correlation with fan attendance with a value of 0.37. Postseason is a variable which describes how far a team got in the postseason (i.e. lost ALCS). In this blog post I will explore some of the relationships found in the heatmap above. 
 
 ### Playoff Success
 
@@ -59,14 +59,13 @@ After getting the values from the correlation matrix I wanted to take a deeper d
 
 The first thing I wanted to explore was the potential relationship between fan attendance numbers and a teams overall success measured by their postseason run. Looking at the image below we can see that, on average, teams that make the posteason filled more of their stadium than teams that missed the postseason. One of the largest bars belonged to teams that would go on to win the world series, while the second smallest bar belonged to teams that missed the playoffs entirely. 
 
-<p align = 'center'>Fig. 1</p>
 <img src = '/assets/images/result.png'>
 
-Looking at the image above we can see that, on average, teams that make the posteason filled more of their stadium than teams that missed the postseason. One of the largest bars belonged to teams that would go on to win the world series, while the second smallest bar belonged to teams that missed the playoffs entirely. This relationship does look consistent with what we found in the correlation matrix above as teams that made the postseason tend to have higher fan attendance. 
+Looking at the image above we can see that, on average, teams that make the posteason filled more of their stadium than teams that missed the postseason. One of the largest bars belonged to teams that would go on to win the world series, while the second smallest bar belonged to teams that missed the playoffs entirely. This relationship does look consistent with what we found in the correlation matrix above as we received a correlation coefficient value of 0.37 meaning that teams that make it farther in the playoffs also tend to have higher fan attendance. This relationship could potentially show the importance of fan attendance numbers for a team looking at making a deeper playoff run, and speaks to the 'homefield advantage' that most teams strive for. 
 
-This relationship could potentially show the importance of fan attendance numbers for a team looking at making a deeper playoff run, and speaks to the 'homefield advantage' that most teams strive for. Is fan attendance the only metric for postseason success however? To answer this question I looked at the relationship between postseason success and team payroll. Looking at the plot below we can see that on average the teams that missed the postseason entirely spent far less on players than the teams that made the playoffs. 
+Is fan attendance the only metric for postseason success however? To answer this question I looked at the relationship between postseason success and team payroll. Looking at the plot below we can see that on average the teams that missed the postseason entirely spent far less on players than the teams that made the playoffs. 
 
 <img src = '/assets/images/barchart.png'>
 
-The world series bar once again has one of the higher numbers, with the largest bar coming from the ALCS loser. With those missing the postseason having such a low payroll however, this chart does show that teams that spend more tend to also go a lot farther than teams that spend less. 
+The bar for world series won contains one of the higher values once again and the smallest bar belongs to teams that missed the postseason entirely. This is fairly consistent with the relationship found in the heatmap since both show there is a positive relationship between payroll and postseason success.  
 
