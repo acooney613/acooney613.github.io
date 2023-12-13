@@ -21,4 +21,4 @@ As explained in my previous the previous post, I am looking at potential contrib
 
 The first thing I would like to take a look at is 
 
-<iframe src="https://raw.githubusercontent.com/acooney613/stat386-mlb_attendance/main/wins_by_proportion.html"></iframe>
+<iframe src = 'sales_chart.html'></iframe>
