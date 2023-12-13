@@ -45,7 +45,7 @@ df['series_result'] = df['series_result'].fillna('missed postseason')
 
 Before I dove fully into my data, I decided to use a correlation matrix to see if there were any relationships between the variables that I wanted to explore more. I created a heatmap (as shown below) of the correlation values for each of the relationships. 
 
-<img src = '/assets/images/heatmap.png'>
+<img align = 'center' src = '/assets/images/heatmap.png'>
 
 The largest correlation value if between wins and postseason, which makes sense given that in order to make the postseason a team has to win more games, so the relationship should be extremely positive and correlated.
 
