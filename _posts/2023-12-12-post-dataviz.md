@@ -75,5 +75,15 @@ Is fan attendance the only metric for postseason success however? To answer this
 
 The bar for world series won contains one of the higher values once again and the smallest bar belongs to teams that missed the postseason entirely. This is fairly consistent with the relationship found in the heatmap since both show there is a positive relationship between payroll and postseason success.  
 
+## Factors Contributing to Fan Attendance
+
+The final piece I will explore in this blog is the effects of wins and payroll on fan attendance. The correlation matrix showed that these two variables had the strongest relationships with fan attendance, so in the plots below we will explore this idea further. 
+
+Looking first at a scatterplot for fan attendance by win-loss percentage, we can see that there does appear to be a fairly positive trend in the data.
+
+<img src = '/assets/images/proportion.png'>
+
+As the value of th e
+
 
 
