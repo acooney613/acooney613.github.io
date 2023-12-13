@@ -17,4 +17,4 @@ If you have not checked out my previous post <a href="https://acooney613.github.
 
 As explained in my previous the previous post, I am looking at potential contributing factors for MLB fan attendance numbers from 2003 to 2022. The dataset that I created contains columns for information on player payroll, year, team, location, stadium's fan capacity, population of surrounding area, season wins, season losses, win-loss percentage, and season results. In this post we will explore some of these variables and see just what they may have to tell us about MLB fan attendance. 
 
-<iframe src="https://github.com/acooney613/stat386-mlb_attendance/blob/main/wins_by_proportion.html" width="100%" height="500" style="border:1px solid black;">  </iframe>
+<iframe src="test.html" width="100%" height="500" style="border:1px solid black;">  </iframe>
