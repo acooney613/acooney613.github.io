@@ -21,4 +21,6 @@ As explained in my previous the previous post, I am looking at potential contrib
 
 The first thing I decided to look at when exploring the data was a correlation matrix between the numeric variables in and attendance. I wanted to see if there were some variables that would be more interesting to explore before I dove in. 
 
-<img src = 'assets/heatmap.png'>
+<img src = '/assets/images/heatmap.png'>
+
+Looking at the heatmap, we can see that both payroll and wins are correlated the same with proportion of stadium capacity filled. They both have a fairly strong positive correlation with this fan attendance metric. 
