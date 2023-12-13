@@ -83,7 +83,7 @@ Looking first at a scatterplot for fan attendance by win-loss percentage, we can
 
 <img src = '/assets/images/proportion.png'>
 
-As the value of th e
+As the win-loss variable increases, the total proportion of stadium filled also increases on average. The trend line in the center displays this relationship as it contains a positive slope, showing an increase in y (stadium filled) with an increase in x (win-loss). This is consistent with the correlation matrix, as both show a positive correlation between win-loss percentage and proportion of fan attendance. 
 
 
 
