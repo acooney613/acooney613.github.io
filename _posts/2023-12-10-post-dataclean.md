@@ -11,11 +11,11 @@ kramdown:
 
 ## Introduction
 
-Major League Baseball (MLB) is one of the four major U.S. sports, and has recently been experiencing a decline in popularity. Attendance numbers appear to be dropping at rapid rates across the league news spreads of the MLB's sudden loss of popularity to sports like basketbal and football. Teams like the Oakland Athletics who appear to be experiencing extremely low fan attendance numbers have looked at moving locations to areas where a new fanbase could be created to increase attendance numbers. 
+Major League Baseball (MLB) is one of the four major U.S. sports, and has recently been experiencing a decline in popularity. Attendance numbers appear to be dropping at rapid rates across the league news spreads of the MLB's sudden loss of popularity to sports like basketball and football. Teams like the Oakland Athletics who appear to be experiencing extremely low fan attendance numbers have looked at moving locations to areas where a new fan base could be created to increase attendance numbers. 
 
 With the MLB experiencing this decline, I decided to look into some potential factors that contribute to fan attendance for any given team. I gathered and scraped data from 2003 to 2022 in my attempt to dive into this issue further. Through this blog post I will demonstrate the code that I used to create my dataset, and in my next post I will dive into my analysis of the data collected.
 
-In total I created and combined 5 seperate datasets. I created a payroll, an attendance, a season, a stadium, and a population dataset in order to get all the information I felt would be most useful in exploring this topic. I used python's pandas and BeautifulSoup to collect and clean the data. I gathered data from multiple different websites and locations as we will explore below. For each of the datasets described below I have linked both the CSV file created from my python code as well as the full code I used to scrape and clean that dataset.
+In total I created and combined 5 separate datasets. I created a payroll, an attendance, a season, a stadium, and a population dataset in order to get all the information I felt would be most useful in exploring this topic. I used python's pandas and BeautifulSoup to collect and clean the data. I gathered data from multiple different websites and locations as we will explore below. For each of the datasets described below I have linked both the CSV file created from my python code as well as the full code I used to scrape and clean that dataset.
 
 ## Data Collection
 
@@ -23,7 +23,7 @@ When thinking about answering the question of what factors affect fan attendance
 
 I first wanted to make sure that I had team attendance numbers for all of the years I was going to be looking at. I used espn to gather the data I needed for this.
 
-The <a href="https://github.com/acooney613/stat386-mlb_attendance/blob/main/DATA/attendance.csv" target = "_blank">attendance</a> data that I collected contains columns for team, year, and average attendance. The average attendance is the teams average home attendance for the year specified.
+The <a href="https://github.com/acooney613/stat386-mlb_attendance/blob/main/DATA/attendance.csv" target = "_blank">attendance</a> data that I collected contains columns for team, year, and average attendance. The average attendance is the team's average home attendance for the year specified.
 Full Code: <a href="https://github.com/acooney613/stat386-mlb_attendance/blob/main/attendance.py" target = "_blank">attendance code</a>
 
 Next I wanted to get the teams player payroll data so that I could look at how much teams are spending on players for any given season.
@@ -56,6 +56,6 @@ Full Code: <a href="https://github.com/acooney613/stat386-mlb_attendance/blob/ma
 
 ## Conclusion
 
-While this dataset may not be perfect, I believe it is a good start at exploring some potential contributing factors for attendance numbers across the league. In a future blog post I will discuss some of the potential findings in the data along with key graphics to display some of the relationships that may exist with the variables that I have chosed to look at. If you truly enjoyed this topic I encourage you to try some on your own, and update and change the dataset to perform your own exploration of baseball or any topic of your choice! Below is the link to my full repo if you would like to look at my full project!
+While this dataset may not be perfect, I believe it is a good start at exploring some potential contributing factors for attendance numbers across the league. In a future blog post I will discuss some of the potential findings in the data along with key graphics to display some of the relationships that may exist with the variables that I have chosen to look at. If you truly enjoyed this topic I encourage you to try some on your own, and update and change the dataset to perform your own exploration of baseball or any topic of your choice! Below is the link to my full repo if you would like to look at my full project!
 
 <a href="https://github.com/acooney613/stat386-mlb_attendance/tree/main" target = "_blank"> FULL REPO</a>
