@@ -52,9 +52,9 @@ Before I dove fully into my data, I decided to use a correlation matrix to see i
 <img src = '/assets/images/heatmap.png'>
 </div>
 
-The largest correlation value if between wins and postseason, which makes sense given that in order to make the postseason a team has to win more games, so the relationship should be extremely positive and correlated.
+The largest correlation exists between wins and postseason, which makes sense given that teams have to win more games in order to make the postseason. Postseason is a variable which describes how far a team got in the postseason. The MLB postseason contains multiple different series that teams can make, with the World Series being the final round to determine the winner for any given season (ALCS and NLCS refer to National and American League Conference Series, ALDS and NLDS are the division series, and ALWC and NLWC are the wild card sereies). As shown in the code above, I have added several variables to this dataset in order to denote the different playoff series made and how far along each one is (larger number meaning deeper playoff run).
 
-The top two correlation values, other than wins and postseason, are both 0.45 and show that there is potentially positive correlation between fan attendance and both wins and payroll. Postseason also has a fairly positive correlation with fan attendance with a value of 0.37. Postseason is a variable which describes how far a team got in the postseason (i.e. lost ALCS). In this blog post I will explore some of the relationships found in the heatmap above. 
+The top two correlation values, excluding wins and postseason, are both 0.45. They show a potential positive correlation between fan attendance and both wins and payroll. Postseason also has a fairly positive correlation with fan attendance, with a value of 0.37. In this blog post I will explore some of the relationships found in the heatmap above. 
 
 ### Playoff Success and Fan Attendance
 
