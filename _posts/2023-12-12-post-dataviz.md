@@ -58,15 +58,13 @@ The top two correlation values, excluding wins and postseason, are both 0.45. Th
 
 ### Playoff Success and Fan Attendance
 
-After getting the values from the correlation matrix I wanted to take a deeper dive into postseason success and various factors that may be contributing to a teams overall success. I first made a barchart between the end of season result and the overall fan attendance as shown below. 
-
-The first thing I wanted to explore was the potential relationship between fan attendance numbers and a teams overall success measured by their postseason run. Looking at the image below we can see that, on average, teams that make the posteason filled more of their stadium than teams that missed the postseason. One of the largest bars belonged to teams that would go on to win the world series, while the second smallest bar belonged to teams that missed the playoffs entirely. 
+After getting the values from the correlation matrix, I wanted to take a closer look into postseason success and various factors that may be contributing to a teams overall success. First I made a barchart between the end of season result and the overall fan attendance as, shown below. I wanted to explore the potential relationship between fan attendance numbers and a team's overall success, measured by their postseason run. Looking at the image below, we can see that, on average, teams that make the posteason filled more of their stadium than teams that missed the postseason. One of the largest bars belonged to teams that would go on to win the World Series, while the second smallest bar belonged to teams that missed the playoffs entirely. 
 
 <div align = 'center'>
 <img src = '/assets/images/result.png'>
 </div>
 
-Looking at the image above we can see that, on average, teams that make the posteason filled more of their stadium than teams that missed the postseason. One of the largest bars belonged to teams that would go on to win the world series, while the second smallest bar belonged to teams that missed the playoffs entirely. This relationship does look consistent with what we found in the correlation matrix above as we received a correlation coefficient value of 0.37 meaning that teams that make it farther in the playoffs also tend to have higher fan attendance. This relationship could potentially show the importance of fan attendance numbers for a team looking at making a deeper playoff run, and speaks to the 'homefield advantage' that most teams strive for. 
+Looking at the image above, we can see that, on average, teams that make the posteason filled more of their stadium than teams that missed the postseason. One of the largest bars belonged to teams that would go on to win the World Series, while the second smallest bar belonged to teams that missed the playoffs entirely. This relationship does look consistent with what we found in the correlation matrix above as we received a correlation coefficient value of 0.37 meaning that teams that make it farther in the playoffs also tend to have higher fan attendance. This relationship could potentially show the importance of fan attendance numbers for a team looking at making a deeper playoff run, and speaks to the 'homefield advantage' that most teams strive for. 
 
 I dove deeper into this thought of fan attendance and decided to create a barchart using the World Series resultss from 2012 to 2022 (excluding 2020 as there is no attendance data) to see if there was a common trend.
 
@@ -74,7 +72,7 @@ I dove deeper into this thought of fan attendance and decided to create a barcha
 <img src = '/assets/images/winner.png'>
 </div>
 
-Looking at this plot we can see that, on average, the team that ended up winning the world series had a larger average fan attendance for the season than the teams that ended up losing the world series. The two largest gaps in this data come in the years 2014 and 2016, where the winners clearly had a much higher fan attendance rate than the loser. In years such as 2013, 2017, and 2019 however, the losing team had a larger fan attendance proportion than the winner. Overall this plot appears to agree with the correlation matrix in saying that teams that have greater fan attendance also tend to do better in the postseason than teams with less fan attendance. 
+Looking at this plot we can see that, on average, the team that ended up winning the World Series had a larger average fan attendance for the season than the teams that ended up losing the World Series. The two largest gaps in this data come in the years 2014 and 2016, where the winners clearly had a much higher fan attendance rate than the loser. In years such as 2013, 2017, and 2019 however, the losing team had a larger fan attendance proportion than the winner. Overall this plot appears to agree with the correlation matrix in saying that teams that have greater fan attendance also tend to do better in the postseason than teams with less fan attendance. 
 
 
 ### Playoff Success and Player Payroll
@@ -84,7 +82,7 @@ Is fan attendance the only metric for postseason success however? To answer this
 <img src = '/assets/images/barchart.png'>
 </div>
 
-The bar for world series won contains one of the higher values once again and the smallest bar belongs to teams that missed the postseason entirely. This is fairly consistent with the relationship found in the heatmap since both show there is a positive relationship between payroll and postseason success.  
+The bar for World Series won contains one of the higher values once again and the smallest bar belongs to teams that missed the postseason entirely. This is fairly consistent with the relationship found in the heatmap since both show there is a positive relationship between payroll and postseason success.  
 
 ### Factors Contributing to Fan Attendance
 
