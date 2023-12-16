@@ -15,11 +15,11 @@ If you have not checked out my previous post, <a href="https://acooney613.github
 
 ## Introduction
 
-As explained in my previous the previous post, I am looking at potential contributing factors for MLB fan attendance numbers from 2003 to 2022. The dataset that I created contains columns for information on player payroll, year, team, location, stadium's fan capacity, population of surrounding area, season wins, season losses, win-loss percentage, and season results. In this post we will explore some of these variables and see just what they may have to tell us about MLB fan attendance. 
+As explained in my previous post, I am looking at potential contributing factors for MLB fan attendance numbers from 2003 to 2022. The dataset that I created contains columns for information on player payroll, year, team, location, stadium's fan capacity, population of surrounding area, season wins, season losses, win-loss percentage, and season results. In this post, we will explore some of these variables and see what they can tell us about MLB fan attendance. 
 
 ## Before Exploration
 
-Before I started diving into the data I decided to create several new columns to better explore this data. I created columns to tell me the proportion of the stadium that was filled on average for a given season, columns that indicated playoff appearances, as well as how far they made it in the playoffs. The code I used for this can be found below:
+Before I dove into the data, I decided to create several new columns to better explore this data. I created columns that told me the proportion of the stadium that was filled on average for a given season, indicated playoff appearances, and how far a team made it in the playoffs. The code I used for this can be found below:
 
 ```python
 ---
